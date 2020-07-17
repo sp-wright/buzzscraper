@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BuzzScraper</title>
+    <link rel="stylesheet" href="/styles.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,700;1,400&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <header class="title">
+      <h1>BuzzScraper</h1>
+      <p>Scraping the top 10 trending quizzes from <a href="https://www.buzzfeed.com/trending/quizzes">BuzzFeed.com</a></p>
+    </header>
+    <section class="quiz-list-container">
+      <ol>
+        <%quizzes.forEach(quiz => {%>
+        <li class="quiz-item">
+          <a href="<%= quiz.link %>">
+            <div>
+              <img src="<%= quiz.image %>" alt="<%= quiz.title %>" />
+              <h2><%= quiz.title %></h2>
+            </div>
+          </a>
+        </li>
+        <% });%>
+      </ol>
+    </section>
+    <footer>
+      <p>coded by <a href="https://sp-wright.github.io/portfolio/">sp-wright</a></p>
+    </footer>
+  </body>
+</html>
